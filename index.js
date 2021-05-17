@@ -5,6 +5,8 @@ const cors = require("cors")
 const bodyParser = require("body-parser")
 const cookieParser = require("cookie-parser")
 const session = require("express-session")
+const path = require("path")
+
 const app = express()
 require("dotenv").config()
 const PORT = process.env.PORT || 3000
