@@ -39,9 +39,9 @@ mongoose
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
   // Set static folder
-  app.use(express.static(__dirname + "/public"))
+  app.use(express.static(__dirname + "server/public"))
   app.get(/.*/, (req, res) => {
-    res.sendFile(__dirname + "/public/index.html")
+    res.sendFile(__dirname + "server/public/index.html")
   })
 }
 // if (process.env.NODE_ENV === "production") {
