@@ -38,12 +38,13 @@ mongoose
 
 // Serve static assets in production
 if (process.env.NODE_ENV === "production") {
-  // Set static folder
-  app.use(express.static(__dirname + "server/public"))
-  app.get(/.*/, (req, res) => {
-    res.sendFile(__dirname + "server/public/index.html")
-  })
+  // Static folder
+  app.use(express.static(__dirname + "/public/"))
+
+  // Handle SPA
+  app.get(/.*/, (req, res) => res.sendFile(__dirname + "/public/index.html"))
 }
+
 // if (process.env.NODE_ENV === "production") {
 //   // Set static folder
 //   app.use(express.static("client/build"))
@@ -52,4 +53,4 @@ if (process.env.NODE_ENV === "production") {
 //   })
 // }
 
-app.listen(PORT, () => console.log(`App listening at http://localhost:${PORT}`))
+app.listen(port, () => console.log(`Server started on port ${port}`))
