@@ -4,12 +4,8 @@
   "description": "Full stack project ",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js",
-    "dev": "concurrently \"npm run server\" \"npm run client\"",
-    "server": "nodemon server.js --ignore 'client/'",
-    "client": "npm run serve --prefix client",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+    "start": "node server/index.js",
+    "dev": "nodemon server/index.js"
   },
   "author": "",
   "license": "MIT",
